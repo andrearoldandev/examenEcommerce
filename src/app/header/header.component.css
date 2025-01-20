@@ -29,6 +29,19 @@ nav a.active {
   font-weight: bold;
 }
 
+.icono {
+  width: 2rem;
+  height: 2rem;
+}
+
+.cantidad {
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;

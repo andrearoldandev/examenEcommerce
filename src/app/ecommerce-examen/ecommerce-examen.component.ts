@@ -1,3 +1,4 @@
+import { CarritoService } from './../services/carrito.service';
 import { Producto } from './../producto.model';
 import { Component } from '@angular/core';
 import { ProductosService } from '../services/productos.service';
@@ -20,7 +21,7 @@ export class EcommerceExamenComponent {
 
   errorMensaje: string = "";
 
-  constructor(private productosService: ProductosService) {}
+  constructor(private productosService: ProductosService, private carritoService: CarritoService) {}
 
   ngOnInit() {
     this.productos = this.productosService.getProductos();
@@ -53,31 +54,10 @@ export class EcommerceExamenComponent {
     this.productos = this.productosService.getProductos();
   }
 
-  /*
-  eliminarProducto(id: number){
-    this.productosService.deleteProductos(id);
-    this.productos = this.productosService.getProductos();
+  //Metodo para el carrito de la compra
+  comprarProducto() {
+    this.carritoService.agregarArticulo();
+    alert('Producto añadido correctamente al carrito');
   }
 
-  actualizarProducto(id: number){
-    const nuevaInfo = {descripcion: this.nuevaDescripcion, precio: this.nuevoPrecio};
-    this.productosService.updateProducto(id, nuevaInfo);
-    this.productos = this.productosService.getProductos();
-  }
-
-  //Metodos para la edicion
-  /*editarProducto(producto: {id: number; nombre: string; descripcion: string; precio: number; imgUrl: string}): void {
-    this.productoEditando = producto;
-    this.nuevaDescripcion = producto.descripcion;
-    this.nuevoPrecio = producto.precio;
-  }
-
-  actualizarDatos() {
-    if(this.productoEditando) {
-      this.productosService.updateProducto(this.productoEditando.id,this.nuevaDescripcion, this.nuevoPrecio!);
-      this.productoEditando = null;
-      this.nuevaDescripcion = "";
-      this.nuevoPrecio = 0;
-    }
-  }*/
 }
