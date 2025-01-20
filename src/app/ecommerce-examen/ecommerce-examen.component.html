@@ -1,6 +1,7 @@
 <div class="mb-3 container fondo gestor-ecommerce mt-3">
   <h1 class="text-center">Ecommerce Examen</h1>
 
+  <!--Formulario para agregar productos nuevos a la lista-->
   <div class="container formulario-agregar d-flex flex-column">
     <h3>Agregar productos al comercio</h3>
     <label class="bold" for="nombre">Agrega un nombre para el producto:</label>
@@ -71,12 +72,14 @@
           <div class="d-flex align-items-center justify-content-around col-lg-4 col-md-12">
             <button (click)="editarProducto(producto)" class="mt-3 btn btn-info">Editar Producto</button>
           </div>
+
+          <!--Boton para comprar, si se pulsa, se añade al carrito de la compra de la navbar-->
           <div class="d-flex align-items-center justify-content-around col-lg-4 col-md-12">
             <button (click)="comprarProducto()" class="mt-3 btn btn-success">Comprar producto</button>
           </div>
         </div>
 
-        <!--No funciona-->
+        <!--Actualizar productos, solo se muestra si hemos hecho click en el botón editar-->
         <div *ngIf="productoEditando && productoEditando.id === producto.id" class="d-flex flex-column mt-3">
           <h4>Actualiza el producto:</h4>
           <input type="text" [(ngModel)]="productoEditando.descripcion" placeholder="Nueva descripción" name="descripcion" class="mb-2 input-group-text">
