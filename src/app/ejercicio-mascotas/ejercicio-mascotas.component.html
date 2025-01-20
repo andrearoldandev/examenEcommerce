@@ -1,0 +1,32 @@
+<div class="gestor-tareas">
+  <h1>Gestor de Vacunación de Veterinara Roldán</h1>
+
+  <div class="formulario-agregar">
+    <label for="mascota">Introduce una nueva mascota</label>
+    <input
+      type="text"
+      id="mascota"
+      [(ngModel)]="nuevaMascota"
+      placeholder="Escribe el nombre de la mascota a vacunar"
+      />
+
+      <button (click)="agregarMascota()">Agregar Mascota</button>
+  </div>
+
+  <p *ngIf="errorMensaje">{{ errorMensaje }}</p>
+
+  <!--Lista de Mascotas-->
+  <div>
+    <ul>
+      <li *ngFor="let mascota of mascotas">
+        <span [class.vacunado]="mascota.vacunado">{{ mascota.nombre }}</span>
+
+        <!--Botón para completar la vacunación-->
+        <button (click)="actualizarMascota(mascota.id)" [disabled]="mascota.vacunado">Vacunar</button>
+
+        <!--Botón para eliminar la mascota del registro-->
+        <button (click)="eliminarMascota(mascota.id)">Eliminar del Registro</button>
+      </li>
+    </ul>
+  </div>
+</div>

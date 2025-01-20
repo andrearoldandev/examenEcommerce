@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --font-family: 'Arial, sans-serif';
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --disabled-color: #ccc;
+  --background-color: #f9f9f9;
+  --border-color: #ccc;
+  --text-color: #333;
+  --text-completed: green;
+
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
+
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-large: 1.25rem;
+
+  --max-width: 500px;
+}

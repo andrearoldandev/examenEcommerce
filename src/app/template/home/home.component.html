@@ -1,0 +1,45 @@
+<div>
+  <h1>CRUD</h1>
+
+  <h3>
+    Crear un servicio donde manejar los metodos de crear, actualizar, leer y
+    eliminar
+  </h3>
+
+  <p>
+    En el update, se deberán usar operadores de propagación
+    (...this.tareas[index]) o spread operator, en el caso de las tareas,
+    cogeriamos las propiedades del objeto nueva tarea y las copiamos dentro del
+    nuevo objeto sobrescribiendo las que se han copiado desde this.tarea[index]
+  </p>
+
+  <p>El resultado que obtenemos es un nuevo objeto:</p>
+  <ul>
+    <li>
+    nuevaTarea va a sobreescribir las propiedades existentes en
+    this.tarea[index]
+    </li>
+    <li>Se van a actualizar solo las propiedades de la tarea que cambies</li>
+  </ul>
+
+  <h3>En tareas.ts</h3>
+
+  <p>Crearemos las propiedades necesarias, como el array de tareas vacío, una nuevaTarea y el mensaje de error (todo esto vacío para manejarlo con los métodos).</p>
+
+  <p>Usaremos un constructor inyectando los servicios y un método OnInit para cargar la lista inicial de tareas llamando al método para obtener todas las tareas.</p>
+
+  <p>El orden de ejecución es el siguiente:</p>
+  <ul>
+    <li>Se ejecuta el código del constructor en el caso de que tengamos uno</li>
+    <li>Angula inicializa el componente con todas sus propiedades, métodos, template...</li>
+    <li>Se inicializa todo lo que tengamos en el ngOnInit()</li>
+  </ul>
+
+  <p>En este caso en el método de agregarTarea() generaremos un ID único basado en la fecha actual (es bastante común ver esto, incluso con la hora para hacerlo más fiable) dentro de una constante donde ademas añadiremos el nombre y el boolean de si esta completada en false.</p>
+
+  <p>En el create, debemos usar el método push() para añadir la tarea al array de tareas pasandole por parámetro la constante nueva que hemos creado, seguidamente actualizaremos y limpiaremos el campo de entrada</p>
+
+  <p>Para eliminar una tarea mediante la id usaremos un método creado en el servicio y seguidamente actualizaremos el array en la vista</p>
+
+  <p>Para actualizar una tarea, también crearemos un método al que le pasaremos un id: number y crearemos una const nuevaInfo para pasarle la información del booleano en true, seguidamente actualizamos el array y mostramos las tareas actualizadas.</p>
+</div>
