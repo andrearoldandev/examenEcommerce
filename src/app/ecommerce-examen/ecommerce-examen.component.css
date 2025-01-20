@@ -1,0 +1,24 @@
+.formulario-agregar{
+  background-color: var(--fondo-ecommerce);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.fondo-card {
+  background-color: var(--fondo-cards);
+
+}
+
+.img {
+  width: 80%;
+  height: auto;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}

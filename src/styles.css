@@ -18,4 +18,8 @@
   --font-size-large: 1.25rem;
 
   --max-width: 500px;
+
+  /*Styles para ecommerce*/
+  --fondo-ecommerce: #b1c7ce;
+  --fondo-cards: #d2ffff;
 }

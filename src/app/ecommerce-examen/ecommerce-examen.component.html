@@ -1,1 +1,94 @@
-<p>ecommerce-examen works!</p>
+<div class="container fondo gestor-ecommerce mt-3">
+  <h1 class="text-center">Ecommerce Examen</h1>
+
+  <div class="container formulario-agregar d-flex flex-column">
+    <h3>Agregar productos al comercio</h3>
+    <label class="bold" for="nombre">Agrega un nombre para el producto:</label>
+    <input
+      type="text"
+      id="nombre"
+      [(ngModel)]="nuevoProducto.nombre"
+      placeholder="Nombre del producto"
+      class="mb-3 input-group-text text-start"
+      required
+    />
+
+    <p class="error" *ngIf="errorMensaje">{{ errorMensaje }}</p>
+
+    <label class="bold" for="descripcion">Agrega una descripción:</label>
+    <input
+      type="text"
+      id="descripcion"
+      [(ngModel)]="nuevoProducto.descripcion"
+      placeholder="Descripción del producto"
+      class="mb-3 input-group-text text-start"
+    />
+
+    <label class="bold" for="precio">Agrega un precio:</label>
+    <input
+      type="number"
+      id="precio"
+      [(ngModel)]="nuevoProducto.precio"
+      placeholder="Añade el precio del producto"
+      class="mb-3 input-group-text text-start"
+    />
+
+    <label class="bold" for="precio">Agrega una imagen deseada:</label>
+    <input
+      type="text"
+      id="precio"
+      [(ngModel)]="nuevoProducto.imgUrl"
+      placeholder="Añade la url de la imagen"
+      class=" input-group-text text-start"
+    />
+
+      <button class="btn btn-success mt-3 align-items-center d-flex flex-column justify-content-center text-center" (click)="agregarProducto()">Agregar Producto</button>
+  </div>
+
+
+
+  <!--Listado de productos-->
+  <div class="container mt-3 formulario-agregar">
+    <h3 class="text-center">Productos Disponibles</h3>
+    <form action="" class="form">
+
+      <div *ngFor="let producto of productos" class="rounded row align-items-start fondo-card p-3 mb-3 mt-3">
+        <h3>{{ producto.nombre }}</h3>
+
+        <div class="col col-lg-6 col-md-12 align-items-center d-flex justify-content-center">
+          <img class="img rounded" [src]="producto.imgUrl" alt= {{producto.nombre}}>
+        </div>
+
+        <div class="col col-lg-6 col-md-12 text-lg-start text-md-center align-items-center mt-3">
+          <p><span class="bold">Descripción del producto: </span> {{ producto.descripcion }}</p>
+          <p><span class="bold">Precio: </span>{{ producto.precio }} €</p>
+        </div>
+
+        <div class="row d-flex align-items-center justify-content-around">
+          <div class="d-flex align-items-center justify-content-around col-lg-4 col-md-12">
+            <button class="mt-3 btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar Producto</button>
+          </div>
+          <div class="d-flex align-items-center justify-content-around col-lg-4 col-md-12">
+            <button (click)="editarProducto(producto)" class="mt-3 btn btn-info">Editar Producto</button>
+          </div>
+          <div class="d-flex align-items-center justify-content-around col-lg-4 col-md-12">
+            <button class="mt-3 btn btn-success">Comprar producto</button>
+          </div>
+        </div>
+
+        <!--No funciona-->
+        <div *ngIf="productoEditando && productoEditando.id === producto.id" class="d-flex flex-column mt-3">
+          <h4>Actualiza el producto:</h4>
+          <input type="text" [(ngModel)]="productoEditando.descripcion" placeholder="Nueva descripción" name="descripcion" class="mb-2 input-group-text">
+          <input type="number" [(ngModel)]="productoEditando.precio" placeholder="Nuevo precio" name="precio" class="mb-2 input-group-text">
+          <input type="text" [(ngModel)]="productoEditando.imgUrl" placeholder="Nuevo precio" name="precio" class="input-group-text">
+          <button class="mt-2 btn btn-success" (click)="actualizarProducto()">Actualizar Producto</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+
