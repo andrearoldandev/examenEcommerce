@@ -90,7 +90,7 @@ export class EcommerceExamenComponent {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, eliminarlo!',
+      confirmButtonText: 'Sí, destrúyelo!',
       cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
