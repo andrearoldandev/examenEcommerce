@@ -1,3 +1,8 @@
+#Examen Ecommerce
+
+El código del examen se encuentra en la carpeta ecommerce-examen, además se ha añadido la funcionalidad del carrito de la compra en el componente header. Servicio productos y carrito pertenecen al examen.
+
+
 # CrudTeoria
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
